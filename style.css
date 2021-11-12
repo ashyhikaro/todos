@@ -5,19 +5,25 @@ body {
 
 h1 {
     font-weight: lighter;
-    font-size: 40px;
+    font-size: 60px;
     margin-bottom: 10px;
-    text-transform: uppercase;
     color: rgb(82, 82, 82);
-    letter-spacing: 0.7px;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
 }
 
 .main {
     text-align: center;
+    width: 40%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    box-shadow: 4px 4px 7px rgb(168, 168, 168);
 }
 
 .panel {
-    width: 27%;
+    width: 67%;
     margin: auto;
     justify-content: center;
 }
@@ -72,10 +78,13 @@ input[type=checkbox]:hover {
 }
 
 .forDel {
-    text-align: start;
-    width: 27%;
+    display: flex;
+    justify-content: space-between;
+    width: 67%;
     margin: auto;
     margin-top: 15px;
+    align-items: center;
+    height: 40px;
 }
 
 .del {
@@ -88,10 +97,30 @@ input[type=checkbox]:hover {
     color: rgb(82, 82, 82);
     letter-spacing: 0.2px;
     transition: 0.5s;
+    padding-left: 0;
 }
 
 .del:hover {
     color: tomato;
     letter-spacing: 0.8px;
     font-size: 26px;
+}
+
+.all {
+    border: 1px solid rgb(82, 82, 82);
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: rgb(82, 82, 82);
+    letter-spacing: 0.2px;
+    transition: 0.5s;
+}
+
+.all:hover {
+    color:seagreen;
+    letter-spacing: 0.8px;
+    font-size: 26px;
+    border: none;
 }

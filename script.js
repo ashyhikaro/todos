@@ -1,8 +1,9 @@
-let toDo = document.querySelector('.panel')
-let input = document.querySelector('input')
-let someForm = document.querySelector('form')
-let p, box, div, delBtn, main = document.querySelector('.main')
-let gg, forDel = document.querySelector('.forDel')
+let toDo = document.querySelector('.panel'),
+input = document.querySelector('input'),
+someForm = document.querySelector('form'),
+p, box, div, delBtn, main = document.querySelector('.main'),
+gg, forDel = document.querySelector('.forDel'),
+allBtn
 
 let items = Object.values(localStorage)
 let itemsLen = items.length
@@ -47,6 +48,25 @@ let toLocal = val => {
             forDel.appendChild(delBtn)
         }
 
+        if (!allBtn) {
+            allBtn = document.createElement('input')
+            allBtn.type = 'button'
+            allBtn.value = 'All'
+            allBtn.classList.add('all')
+            forDel.appendChild(allBtn)
+        }
+
+        allBtn.onclick = () => {
+            let allP = document.querySelectorAll('.doIt')
+            for (let i = 0; i < allP.length; i++) {
+                allP[i].classList.add('cherk')
+            }
+            let allBox = document.querySelectorAll('.checkIt')
+            for (let i = 0; i < allBox.length; i++) {
+                allBox[i].checked = true
+            }
+        }
+
         delBtn.onclick = () => {
             let allBox = document.querySelectorAll('.checkIt')
             for (let i = 0; i < allBox.length; i++) {
@@ -65,9 +85,11 @@ let toLocal = val => {
                 } 
             }
             allBox = document.querySelectorAll('input')
-            if (allBox.length < 3) {
+            if (allBox.length < 4) {
                 delBtn.remove()
                 delBtn = 0
+                allBtn.remove()
+                allBtn = 0
             }
         }
 
@@ -107,6 +129,26 @@ someForm.onsubmit = () => {
         forDel.appendChild(delBtn)
     }
 
+    if (!allBtn) {
+        allBtn = document.createElement('input')
+        allBtn.type = 'button'
+        allBtn.value = 'All'
+        allBtn.classList.add('all')
+        forDel.appendChild(allBtn)
+    }
+
+    allBtn.onclick = () => {
+        let allP = document.querySelectorAll('.doIt')
+        for (let i = 0; i < allP.length; i++) {
+            allP[i].classList.add('cherk')
+        }
+        let allBox = document.querySelectorAll('.checkIt')
+        for (let i = 0; i < allBox.length; i++) {
+            allBox[i].checked = true
+        }
+        
+    }
+
     delBtn.onclick = () => {
         let allBox = document.querySelectorAll('.checkIt')
         for (let i = 0; i < allBox.length; i++) {
@@ -125,9 +167,11 @@ someForm.onsubmit = () => {
             }
         }
         allBox = document.querySelectorAll('input')
-        if (allBox.length < 3) {
+        if (allBox.length < 4) {
             delBtn.remove()
             delBtn = 0
+            allBtn.remove()
+            allBtn = 0
         }
     }
 
