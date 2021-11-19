@@ -58,12 +58,19 @@ let toLocal = val => {
 
         allBtn.onclick = () => {
             let allP = document.querySelectorAll('.doIt')
-            for (let i = 0; i < allP.length; i++) {
-                allP[i].classList.add('cherk')
+            let counter = 0
+
+            for (let p of allP) if (p.className == "doIt cherk") counter++
+            
+            if (counter != allP.length) {
+                for (let i = 0; i < allP.length; i++) allP[i].classList.add('cherk')
+                let allBox = document.querySelectorAll('.checkIt')
+                for (let i = 0; i < allBox.length; i++) allBox[i].checked = true
             }
-            let allBox = document.querySelectorAll('.checkIt')
-            for (let i = 0; i < allBox.length; i++) {
-                allBox[i].checked = true
+            else {
+                for (let i = 0; i < allP.length; i++) allP[i].classList.remove('cherk')
+                let allBox = document.querySelectorAll('.checkIt')
+                for (let i = 0; i < allBox.length; i++) allBox[i].checked = false
             }
         }
 
@@ -139,14 +146,20 @@ someForm.onsubmit = () => {
 
     allBtn.onclick = () => {
         let allP = document.querySelectorAll('.doIt')
-        for (let i = 0; i < allP.length; i++) {
-            allP[i].classList.add('cherk')
+        let counter = 0
+
+        for (let p of allP) if (p.className == "doIt cherk") counter++
+            
+        if (counter != allP.length) {
+            for (let i = 0; i < allP.length; i++) allP[i].classList.add('cherk')
+            let allBox = document.querySelectorAll('.checkIt')
+            for (let i = 0; i < allBox.length; i++) allBox[i].checked = true
         }
-        let allBox = document.querySelectorAll('.checkIt')
-        for (let i = 0; i < allBox.length; i++) {
-            allBox[i].checked = true
+         else {
+            for (let i = 0; i < allP.length; i++) allP[i].classList.remove('cherk')
+            let allBox = document.querySelectorAll('.checkIt')
+            for (let i = 0; i < allBox.length; i++) allBox[i].checked = false
         }
-        
     }
 
     delBtn.onclick = () => {
